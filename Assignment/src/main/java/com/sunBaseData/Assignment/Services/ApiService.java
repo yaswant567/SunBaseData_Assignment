@@ -20,6 +20,7 @@ public class ApiService {
     private RestTemplate restTemplate;
     @Value("${apiBaseUrl}")
     private String apiBaseUrl;
+    private String bearerToken;
 
     public String authenticateUser(String loginId, String password)
     {
@@ -31,7 +32,15 @@ public class ApiService {
         String requestBody = "{\"login_id\": \"" + loginId + "\", \"password\": \"" + password + "\"}";
         HttpEntity<String> entity = new HttpEntity<>(requestBody, headers);
         String response = restTemplate.postForObject(authenticationUrl, requestBody, String.class);
-        return response;
+        if (response != null) {
+            // Authentication successful, extract the bearer token from the response
+            System.out.println("response1:" + response);
+            this.bearerToken = response;
+        } else {
+            // Authentication failed, handle the error
+            throw new RuntimeException("Authentication failed: ");
+        }
+        return bearerToken;
     }
 
 

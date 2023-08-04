@@ -35,7 +35,6 @@ public class UserController {
     {
         System.out.println("Before API call" + user.toString());
         token = apiService.authenticateUser(user.getLoginId(), user.getPassword());
-        System.out.println("After API call" + token);
         if(token != null)
         {
             return "redirect:/addCustomer";
