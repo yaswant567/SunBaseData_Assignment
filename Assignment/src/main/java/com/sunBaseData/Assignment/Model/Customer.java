@@ -1,28 +1,17 @@
 package com.sunBaseData.Assignment.Model;
 
-import jakarta.persistence.*;
 
-@Entity
 public class Customer
 {
-    @Id
-    @GeneratedValue(generator = "id_seq", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name = "id_seq", sequenceName = "id_sequence", initialValue = 1, allocationSize = 1)
-    @Column(name = "Id")
+
     private int id;
-    @Column(name = "First Name", nullable = false)
     private String firstName;
-    @Column(name = "Last Name")
     private String lastName;
-    @Column(name = "Address", nullable = false)
     private String address;
-    @Column(name = "City", nullable = false)
     private String city;
-    @Column(name = "State", nullable = false)
+    private String street;
     private String state;
-    @Column(name = "Email", nullable = false)
     private String email;
-    @Column(name = "Phone", length = 10, nullable = false)
     private String phone;
 
     public int getId() {
@@ -47,6 +36,14 @@ public class Customer
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     public String getAddress() {
