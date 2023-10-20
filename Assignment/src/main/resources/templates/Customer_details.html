@@ -31,7 +31,10 @@
                 <td th:text="${customer.state}"></td>
                 <td th:text="${customer.email}"></td>
                 <td th:text="${customer.phone}"></td>
-                <td></td>
+                <td>
+                    <a th:href="@{/deleteCustomer/{id}(id=${customer.id})}" onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a>
+                    <a th:href="@{/editCustomer/{id}(id=${customer.id})}">Edit</a>
+                </td>
             </tr>
           </tbody>
       </table>

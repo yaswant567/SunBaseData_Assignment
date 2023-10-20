@@ -2,6 +2,7 @@ body{
    display: flex;
    justify-content: center;
    align-items: center;
+   background-color: blue;
 }
 .login{
   display: flex;
@@ -13,4 +14,7 @@ form{
 display: flex;
 flex-direction: column;
 gap: 10px;
+}
+input{
+height: 2rem;
 }

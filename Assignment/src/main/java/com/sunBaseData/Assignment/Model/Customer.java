@@ -1,24 +1,37 @@
 package com.sunBaseData.Assignment.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 public class Customer
 {
 
-    private int id;
+
+    @JsonProperty("uuid")
+    private String id;
+    @JsonProperty("first_name")
     private String firstName;
+    @JsonProperty("last_name")
     private String lastName;
-    private String address;
-    private String city;
+    @JsonProperty("street")
     private String street;
+    @JsonProperty("address")
+    private String address;
+    @JsonProperty("city")
+    private String city;
+    @JsonProperty("state")
     private String state;
+    @JsonProperty("email")
     private String email;
+    @JsonProperty("phone")
     private String phone;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
